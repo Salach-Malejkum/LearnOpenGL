@@ -1,4 +1,3 @@
-```markdown
 # LearnOpenGL — Portfolio: Game Rendering Programmer
 
 Small, focused OpenGL example project intended as a portfolio piece. It demonstrates basic GLFW/GLAD initialization, a simple Shader wrapper, and a minimal rendering loop showing two triangles.
@@ -21,4 +20,3 @@ Notes
 Author
 - Salach-Malejkum — Game Rendering Programmer (portfolio)
   - GitHub: https://github.com/Salach-Malejkum
-```
