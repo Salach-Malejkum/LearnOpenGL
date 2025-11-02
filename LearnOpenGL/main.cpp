@@ -57,6 +57,7 @@ static void checkProgramLinkErrors(unsigned int program)
 	}
 }
 
+
 static GLuint compileShader(GLenum type, const std::string& source)
 {
 	GLuint shader = glCreateShader(type);
@@ -85,28 +86,6 @@ static GLuint createProgramFromSources(const std::string& vertexSrc, const std::
 	return shaderProgram;
 }
 
-
-
-const char* vertexShaderSource = "#version 330 core\n"
-	"layout(location = 0) in vec3 aPos; \n"
-	"void main()\n"
-	"{\n"
-	" gl_Position = vec4(aPos, 1.0);\n"
-	"}\0";
-
-const char* fragmentShaderSource = "#version 330 core\n"
-	"out vec4 FragColor;\n"
-	"void main()\n"
-	"{\n"
-	" FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
-	"}\0";
-
-const char* yellowFragmentShaderSource = "#version 330 core\n"
-	"out vec4 FragColor;\n"
-	"void main()\n"
-	"{\n"
-	" FragColor = vec4(1.0f, 1.0f, 0.0f, 1.0f);\n"
-	"}\0";
 
 int main()
 {
@@ -144,7 +123,7 @@ int main()
 		return -1;
 	}
 
-	// Shader programs
+	// Shader program
 	unsigned int shaderProgram = createProgramFromSources(vertexSrc, fragmentSrc);
 	GLint colorLocation = glGetUniformLocation(shaderProgram, "uColor");
 	if (colorLocation == -1) {
