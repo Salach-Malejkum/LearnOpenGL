@@ -25,16 +25,6 @@ void processInput(GLFWwindow* window)
 }
 
 
-static std::string loadFile(const std::string& path)
-{
-	std::ifstream inputFile(path);
-	if (!inputFile) return {};
-	std::ostringstream ss;
-	ss << inputFile.rdbuf();
-	return ss.str();
-}
-
-
 int main()
 {
 	// GLFW window initialization

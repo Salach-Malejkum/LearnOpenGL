@@ -7,8 +7,6 @@ uniform vec4 uColor;
 uniform bool uUseColor;
 
 
-
-
 void main()
 {
 	if (uUseColor)

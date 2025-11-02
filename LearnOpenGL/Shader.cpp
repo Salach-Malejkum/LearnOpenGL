@@ -8,7 +8,7 @@ void Shader::checkShaderCompileErrors(unsigned int shader, const std::string& ty
 	{
 		char infoLog[512];
 		glGetShaderInfoLog(shader, sizeof(infoLog), NULL, infoLog);
-		std::cout << "ERROR::SHADER::" << type << "::COMPILATION_FAILED\n" << infoLog << std::endl;
+		std::cerr << "ERROR::SHADER::" << type << "::COMPILATION_FAILED\n" << infoLog << std::endl;
 	}
 }
 
@@ -19,7 +19,7 @@ void Shader::checkProgramLinkErrors(unsigned int program)
 	if (!success) {
 		char infoLog[512];
 		glGetProgramInfoLog(program, 512, NULL, infoLog);
-		std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
+		std::cerr << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
 	}
 }
 
@@ -87,7 +87,7 @@ Shader::Shader(const std::string& vertexPath, const std::string& fragmentPath)
 
 	if (vertexSrc.empty() || fragmentSrc.empty())
 	{
-		std::cout << "Failed to load shader files." << std::endl;
+		std::cerr << "Failed to load shader files." << std::endl;
 		this->programID = 0;
 		return;
 	}
